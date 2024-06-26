@@ -94,3 +94,48 @@ particlesJS("particles-js", {
     background_size: "cover",
   },
 });
+
+
+document.addEventListener("DOMContentLoaded", function() {
+  // Set the loader to be visible for a specified duration (e.g., 3 seconds)
+  const loaderDuration = 1000; // 3000 milliseconds = 3 seconds
+
+  // Function to hide the loader and display the content
+  function hideLoader() {
+    const loader = document.getElementById("loader");
+    const content = document.getElementById("content");
+    loader.style.display = "none";
+    content.style.display = "block";
+  }
+
+  // Set a timeout to hide the loader after the specified duration
+  setTimeout(hideLoader, loaderDuration);
+});
+
+const header = document.querySelector(".navbar");
+
+window.addEventListener("scroll", function() {
+  if (window.scrollY > 25) {
+    header.classList.add("active");
+  } else {
+    header.classList.remove("active");
+  }
+});
+
+
+document.addEventListener('DOMContentLoaded', (event) => {
+  const menuToggle = document.querySelector('#menuToggle input');
+  const menu = document.querySelector('#menu');
+  
+
+  menuToggle.addEventListener('change', () => {
+      if (menuToggle.checked) {
+          menu.classList.add('active');
+      } else {
+          menu.classList.remove('active');
+      }
+  });
+});
+
+
+

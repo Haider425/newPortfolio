@@ -1,7 +1,11 @@
 @import "animation";
 @import "variables";
+@import "loader";
 
 @import "header";
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
+
 
 * {
   margin: 0;
@@ -10,17 +14,30 @@
 }
 
 body {
-  font-family: 'Arial', sans-serif;
+  font-family: Raleway, serif !important;
   background-color: $bg-color;
   color: $font-color;
+
 }
 
 ::-webkit-scrollbar {
-  width: 10px;
-  background-color: $scrollbar-color;
+  width: 8px;
 }
 
 ::-webkit-scrollbar-thumb {
   background-color: $scrollbar-thumb-color;
-  border-radius: 10px;
+  border-radius: 12px;
+
 }
+
+::-webkit-scrollbar-track {
+  background-color: $scrollbar-track-color;
+
+}
+
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: $scrollbar-thumb-hover-color;
+}
+
+
