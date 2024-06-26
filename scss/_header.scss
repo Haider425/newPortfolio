@@ -22,124 +22,11 @@
         height: auto;
       }
     }
-  
-    #menuToggle {
-        display: none; // Hide by default, show only on mobile
-        position: relative;
-        z-index: 1;
-        -webkit-user-select: none;
-        user-select: none;
-        cursor: pointer;
-        background-color: red;
 
-        #menu{
-            
-            background-color: #1b1a2e;
-            position: absolute;
-            top: 40px;
-            right: 0;
-            width: 200px;
-            border-radius: 10px;
-            box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
-            display: none;
-        
-            height: auto;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            margin: auto;
-            
-        }
-      }
-    
-      #menuToggle input {
-        display: block;
-        width: 40px;
-        height: 32px;
-        position: absolute;
-        top: -7px;
-        left: -5px;
-        cursor: pointer;
-        opacity: 0;
-        z-index: 2;
-        -webkit-touch-callout: none;
-      }
-    
-      #menuToggle span {
-        display: block;
-        width: 33px;
-        height: 4px;
-        margin-bottom: 5px;
-        position: relative;
-        background: #cdcdcd;
-        border-radius: 3px;
-        z-index: 1;
-        transform-origin: 4px 0px;
-        transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
-                    background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
-                    opacity 0.55s ease;
-      }
-    
-      #menuToggle span:first-child {
-        transform-origin: 0% 0%;
-      }
-    
-      #menuToggle span:nth-last-child(2) {
-        transform-origin: 0% 100%;
-      }
-    
-      #menuToggle input:checked ~ span {
-        opacity: 1;
-        transform: rotate(45deg) translate(-2px, -1px);
-        background: #fff;
-      }
-    
-      #menuToggle input:checked ~ span:nth-last-child(3) {
-        opacity: 0;
-        transform: rotate(0deg) scale(0.2, 0.2);
-      }
-    
-      #menuToggle input:checked ~ span:nth-last-child(2) {
-        transform: rotate(-45deg) translate(0, -1px);
-      }
-
-    
-    
-  
-    #menu {
+    .hamburger{
       display: none;
-      flex-direction: column;
-      justify-content: space-between;
-      align-items: center;
-      list-style: none;
-      padding: 0;
-      margin: 0;
-      background-color: #1b1a2e;
-      position: absolute;
-      top: 40px;
-      right: 0;
-      width: 200px;
-      border-radius: 10px;
-      box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
-  
-      li {
-        padding: 15px 0;
-        width: 100%;
-        text-align: center;
-  
-        a {
-          text-decoration: none;
-          color: white;
-          font-size: 1.25rem;
-          transition: all 0.3s ease-in-out;
-  
-          &:hover {
-            color: #be50f4;
-          }
-        }
-      }
     }
+  
   
     .menu {
       display: flex;
@@ -159,6 +46,7 @@
   
         li {
           margin: 0 10px;
+          position: relative;
   
           a {
             text-decoration: none;
@@ -176,7 +64,7 @@
             position: absolute;
             width: 0;
             height: 4px;
-            bottom: -3px;
+            bottom: -5px;
             left: 0;
             background-color: #be50f4;
             visibility: hidden;
@@ -207,65 +95,96 @@
   
             &:hover {
               transform: translateY(-3px);
+              border-color: #be50f4;
             }
           }
         }
       }
     }
   }
-  
-  @media screen and (max-width: 769px) {
-    .navbar {
+
+  @media  screen and (max-width: 900px) {
+ 
+    .navbar{
       padding: 20px;
-  
-      .logo {
+
+      .hamburger{
         display: block;
-      }
-  
-      .menu {
-        display: none;
-      }
-  
-      #menuToggle {
-        display: block; // Show hamburger on mobile
-        margin-left: auto;
-      }
-    }
-  }
-  
-  @media screen and (max-width: 500px) {
-    .navbar {
-      padding: 20px;
-      flex-wrap: wrap;
-  
-      .logo {
-        display: block; // Show logo on mobile
-        order: 1;
-      }
-  
-      #menuToggle {
-        display: block; // Show hamburger on mobile
-        order: 2;
-        margin-left: auto;
-      }
-  
-      .menu {
-        display: none;
-        width: 100%;
-        order: 3;
-  
-        &.active {
-          display: block;
+        cursor: pointer;
+
+
+        .line{
+            width: 30px;
+            height: 3px;
+            background-color: white;
+            margin: 5px 0;
+
+
         }
-  
-        ul {
-          flex-direction: column;
-          align-items: flex-start;
-  
-          li {
-            margin: 10px 0;
+
+        &.active {
+          .line1 {
+            transform: rotate(-45deg) translate(-5px, 6px);
+          }
+    
+          .line2 {
+            opacity: 0;
+          }
+    
+          .line3 {
+            transform: rotate(45deg) translate(-5px, -6px);
           }
         }
+    
+
+
+
+      } 
+
+      .menu{
+        position: absolute;
+        top: 97.5px;
+        left: 0;
+        right: 0;
+        background-color: #1b1a2ea9;
+        width: 100%;
+        height: 0;
+        transition: all 0.3s ease-in-out;
+        overflow: hidden;
+
+
+        ul{
+          display: block;
+          width: fit-content;
+          margin: 50px auto 30px auto;
+          text-align: center;
+          transition: 0.5s;
+          opacity: 0;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+
+          li {
+            margin-bottom: 20px;
+            position: relative;
+            text-align: center;
+
+          }
+        }
+
+        
       }
     }
+
+    .menu.active {
+      opacity: 1;
+      height: auto;
+    
+      ul {
+        opacity: 1;
+      }
+    } 
   }
+
+  

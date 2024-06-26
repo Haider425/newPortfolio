@@ -113,29 +113,35 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 const header = document.querySelector(".navbar");
+const mobileBreakpoint = 900; // Set this to match your CSS mobile breakpoint
 
-window.addEventListener("scroll", function() {
-  if (window.scrollY > 25) {
+function updateHeaderClass() {
+  if (window.innerWidth <= mobileBreakpoint) {
+    // Always add 'active' class in mobile mode
     header.classList.add("active");
   } else {
-    header.classList.remove("active");
+    // Apply scroll-based logic for larger screens
+    if (window.scrollY > 25) {
+      header.classList.add("active");
+    } else {
+      header.classList.remove("active");
+    }
   }
-});
+}
 
+// Initial call to set the correct state
+updateHeaderClass();
 
-document.addEventListener('DOMContentLoaded', (event) => {
-  const menuToggle = document.querySelector('#menuToggle input');
-  const menu = document.querySelector('#menu');
-  
+// Update on scroll
+window.addEventListener("scroll", updateHeaderClass);
 
-  menuToggle.addEventListener('change', () => {
-      if (menuToggle.checked) {
-          menu.classList.add('active');
-      } else {
-          menu.classList.remove('active');
-      }
-  });
-});
+// Update on resize (in case the user switches between mobile and desktop view)
+window.addEventListener("resize", updateHeaderClass);
 
+let hamburger = document.querySelector(".hamburger");
+let navbar = document.querySelector(".menu");
 
-
+hamburger.onclick = function() {
+    navbar.classList.toggle('active');
+    hamburger.classList.toggle('active');
+};
