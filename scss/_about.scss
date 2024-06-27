@@ -1,0 +1,168 @@
+.about {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+
+  .container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 90%;
+    height: 70%;
+    flex-direction: row;
+
+    .text {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      width: 70%;
+      height: 100%;
+      padding: 20px;
+      padding-left: 35px;
+
+      .title {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 20%;
+
+        h2 {
+          font-size: 2.5rem;
+          color: white;
+          font-weight: 700;
+
+          span {
+            color: $main-color;
+          }
+        }
+      }
+
+      .paragraph {
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+        flex-direction: column;
+        width: 100%;
+        height: 80%;
+        font-size: 1.2rem;
+        color: white;
+        position: relative;
+        top: 20px;
+
+        p {
+          font-size: 1.25rem;
+          color: white;
+          line-height: 1.5;
+          text-align: justify;
+          font-weight: 550;
+
+          span {
+            color: $main-color;
+          }
+        }
+      }
+    }
+
+    .image {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 30%;
+      height: 100%;
+
+      .profilePic {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 50%;
+        position: relative;
+        top: 7px;
+
+        img {
+          width: 70%;
+          height: auto;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .about {
+    .container {
+      .text {
+        width: 100%;
+        height: 100%;
+        padding: 10px;
+        padding-left: 20px;
+
+        .title {
+          height: 15%;
+          h2 {
+            font-size: 2rem;
+          }
+        }
+
+        .paragraph {
+          height: 85%;
+          font-size: 1rem;
+          position: relative;
+          top: 10px;
+
+          p {
+            font-size: 1rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .about {
+    position: relative;
+    top: 200px;
+    height: auto;
+    .container {
+      flex-direction: column;
+      .text {
+        width: 100%;
+        padding-left: 10px;
+        height: auto;
+        .title {
+          h2 {
+            font-size: 1.5rem;
+          }
+        }
+
+        .paragraph {
+          font-size: 0.9rem;
+          position: relative;
+          top: 10px;
+
+          p {
+            font-size: 0.9rem;
+          }
+        }
+      }
+
+      .image {
+        width: 100%;
+        height: 30%;
+        position: relative;
+        top: 20px;
+        .profilePic {
+          height: 100%;
+          img {
+            width: 35%;
+          }
+        }
+      }
+    }
+  }
+}
