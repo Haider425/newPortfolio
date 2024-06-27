@@ -153,3 +153,14 @@ var typed = new Typed('.autoTyper', {
   backDelay: 2000,
   loop: true
 });
+
+window.addEventListener("scroll", function() {
+
+  if (window.innerWidth <= mobileBreakpoint) {
+    if(window.scrollY > 25) {
+    navbar.classList.remove('active');
+    hamburger.classList.remove('active');
+    
+    }
+  }
+});
