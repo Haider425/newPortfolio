@@ -147,7 +147,7 @@ hamburger.onclick = function() {
 };
 
 var typed = new Typed('.autoTyper', {
-  strings: ["Web Developer", "Designer", "Freelancer"],
+  strings: ["Software Developer", "MERN Stack Developer", "Mobile App Developer", "Data Scientist"], //gimme few things to add here
   typeSpeed: 80,
   backSpeed: 50,
   backDelay: 2000,
