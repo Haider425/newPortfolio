@@ -405,6 +405,8 @@ body.loading {
   }
   .homePage .container .text .animatedText {
     padding-left: 10px;
+    position: relative;
+    bottom: 50px;
   }
   .homePage .container .text .animatedText .text h2 {
     font-size: 2.4rem;
@@ -417,7 +419,7 @@ body.loading {
     height: auto;
   }
   .homePage .container .picture .image2 img {
-    width: 60%;
+    width: 70%;
     height: auto;
   }
 }
