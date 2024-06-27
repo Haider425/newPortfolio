@@ -145,3 +145,11 @@ hamburger.onclick = function() {
     navbar.classList.toggle('active');
     hamburger.classList.toggle('active');
 };
+
+var typed = new Typed('.autoTyper', {
+  strings: ["Web Developer", "Designer", "Freelancer"],
+  typeSpeed: 80,
+  backSpeed: 50,
+  backDelay: 2000,
+  loop: true
+});
