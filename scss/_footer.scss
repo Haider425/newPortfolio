@@ -1,0 +1,161 @@
+.footer {
+  width: 100%;
+  height: 10vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #0a0416;
+  margin-top: 25px;
+
+  .container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 40px 5px 40px; // top right bottom left
+
+    .designer {
+      width: 30%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      p {
+        font-size: 1rem;
+        font-weight: 500;
+
+        span {
+          color: $main-color;
+        }
+      }
+    }
+
+    .copyright {
+      width: 30%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      p {
+        font-size: 1rem;
+        font-weight: 500;
+
+        span {
+          color: $main-color;
+        }
+      }
+    }
+
+    .icons {
+      width: 30%;
+      height: 100%;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+
+      .spacing {
+        width: 60%;
+        height: 100%;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+
+        .icon {
+          width: 100%;
+          height: 100%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          a {
+            img {
+              width: 20px;
+              height: auto;
+              filter: invert(1);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .footer {
+    margin-top: 0px;
+    .container {
+      padding: 5px 20px 5px 20px;
+      .designer {
+        width: 33%;
+        p {
+          font-size: 0.8rem;
+        }
+      }
+
+      .copyright {
+        width: 33%;
+        p {
+          font-size: 0.8rem;
+        }
+      }
+
+      .icons {
+        width: 33%;
+        .spacing {
+          width: 100%;
+          .icon {
+            a {
+              img {
+                width: 15px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .footer {
+    height: 15vh;
+    .container {
+      padding: 5px 10px 5px 10px;
+      flex-direction: column;
+      gap: 20px;
+      .designer {
+        width: 100%;
+        p {
+          font-size: 0.7rem;
+        }
+      }
+
+      .copyright{
+        width: 100%;
+        p {
+          font-size: 0.7rem;
+
+          span{
+            color: white;
+          }
+        }
+      }
+
+        .icons {
+            width: 40%;
+            .spacing {
+            width: 100%;
+            .icon {
+                a {
+                img {
+                    width: 15px;
+                }
+                }
+            }
+            }
+        }
+    }
+  }
+}
