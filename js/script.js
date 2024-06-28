@@ -164,3 +164,20 @@ window.addEventListener("scroll", function() {
     }
   }
 });
+
+
+const github = document.querySelector(".Github");
+const linkedin = document.querySelector(".LinkedIn");
+const gmail = document.querySelector(".Gmail");
+
+github.onclick = function() {
+  window.open("https://github.com/haider425");
+}
+
+linkedin.onclick = function() {
+  window.open("https://www.linkedin.com/in/haider42");
+}
+
+gmail.onclick = function() {
+  window.open("mailto:haider.saleem@ontariotechu.net");
+}

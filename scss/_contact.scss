@@ -1,0 +1,165 @@
+.contact {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 30vh;
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    height: 100%;
+    padding: 20px;
+    flex-direction: column;
+    .text {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      width: 100%;
+      height: 50%;
+
+      .heading {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 50%;
+
+        h2 {
+          font-size: 2.6rem;
+          font-weight: 600;
+        }
+      }
+
+      .paragraph {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 50%;
+
+        p {
+          font-size: 1.2rem;
+          font-weight: 500;
+
+          span {
+            color: $main-color;
+          }
+        }
+      }
+    }
+
+    .icons {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      text-align: center;
+      width: 40%;
+      height: 50%;
+
+      .Github,
+      .Gmail {
+        a {
+          img {
+            position: relative;
+            top: 2px;
+          }
+        }
+      }
+
+      .icon {
+        width: 45px;
+        height: 45px;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        background-color: white;
+        transition: all 0.3s ease-in-out;
+        cursor: pointer;
+
+        &:hover {
+          background-color: $main-color;
+          box-shadow: 0 0 5px 0 rgba(45, 25, 80, 1);
+        }
+
+        a {
+          img {
+            width: 25px;
+            height: auto;
+          }
+        }
+      }
+    }
+  }
+}
+
+
+@media screen and (max-width: 768px){
+    .contact {
+        .container {
+        width: 80%;
+        .text {
+            .heading {
+            h2 {
+                font-size: 2rem;
+            }
+            }
+            .paragraph {
+            p {
+                font-size: 1rem;
+            }
+            }
+        }
+        .icons {
+            width: 40%;
+            .icon {
+            width: 40px;
+            height: 40px;
+            a {
+                img {
+                width: 20px;
+                }
+            }
+            }
+        }
+        }
+    }
+    
+}
+
+@media screen and (max-width: 480px){
+    .contact {
+        .container {
+        width: 90%;
+        .text {
+            .heading {
+            h2 {
+                font-size: 1.8rem;
+            }
+            }
+            .paragraph {
+            p {
+                font-size: 0.9rem;
+            }
+            }
+        }
+        .icons {
+            width: 50%;
+            .icon {
+            width: 35px;
+            height: 35px;
+            a {
+                img {
+                width: 18px;
+                }
+            }
+            }
+        }
+        }
+    }
+    
+}
