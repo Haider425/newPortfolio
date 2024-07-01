@@ -427,6 +427,8 @@ body.loading {
 @media screen and (max-width: 450px) {
   .homePage .container {
     flex-direction: column;
+    position: relative;
+    top: -20px;
   }
   .homePage .container .text {
     position: relative;
