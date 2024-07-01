@@ -1,0 +1,285 @@
+.wrapper {
+  width: 100%;
+  margin: 0 auto;
+  padding: 0;
+  height: 100vh;
+  overflow: hidden;
+
+  .main-title {
+    text-align: center;
+    margin-top: 1rem;
+    text-shadow: 1px 0px 1px #ccc, 0px 1px 1px #eee, 2px 1px 1px #ccc,
+      1px 2px 1px #eee, 3px 2px 1px #ccc, 2px 3px 1px #eee, 4px 3px 1px #ccc,
+      3px 4px 1px #eee, 5px 4px 1px #ccc, 4px 5px 1px #eee, 6px 5px 1px #ccc,
+      5px 6px 1px #eee, 7px 6px 1px #ccc;
+
+    h1 {
+      font-size: 4rem;
+      text-transform: uppercase;
+      font-weight: 800;
+      color: #555;
+    }
+
+    h2 {
+      font-size: 2rem;
+      font-weight: 300;
+    }
+  }
+
+  .svg-img {
+    display: block;
+    margin: 0 auto;
+
+    svg {
+      display: block;
+      margin: auto;
+      width: 60%;
+      height: auto;
+    }
+  }
+}
+
+.link {
+	width: 5rem;
+	height: 5rem;
+	display: inline-block;
+	font: 300 1.55rem/1.4 "Josefin Sans"; 
+	text-transform: uppercase;
+	letter-spacing: 0.1175em;
+	word-spacing: 0.3em;
+	text-decoration: none;
+    position: absolute;
+    top: 5%;
+    left: 5%;
+    z-index: 1;
+
+
+	&__svg {
+		width: 100%;
+		height: auto;
+		transform-box: fill-box;
+		fill: $textColor;
+		stroke: $textColor;
+		stroke-width: 0.05em;
+		stroke-linecap: round;
+		stroke-linejoin: round;
+	}
+
+	&__cloud {
+		transform-origin: 50% 50%;
+		animation: rotate normal infinite 3 * $rotationDuration linear;
+		fill: rgba(255, 255, 255, 0.15);
+	}
+
+	&__face,
+	&__arrow {
+		transform-origin: 50% 50%;
+		transition: transform $hoverDuration / 2 $easeIn;
+
+		.link:hover & {
+			transform: scale(1.1);
+			transition: transform $hoverDuration $easeOut;
+		}
+	}
+	
+	&__arrow {
+		stroke-width: 0.075em;
+	}
+
+	&__text {
+		animation: rotateReverse normal infinite $rotationDuration linear;
+		transform-origin: 50% 50%;
+
+		.link:hover & {
+			animation-play-state: paused;
+		}
+	}
+
+	&--alt {
+		font-size: 1.15rem;
+		letter-spacing: 0;
+		word-spacing: 0;
+	}
+}
+
+@keyframes rotate {
+	to {
+		transform: rotate(360deg);
+	}
+}
+
+@keyframes rotateReverse {
+	to {
+		transform: rotate(-360deg);
+	}
+}
+
+#clock {
+  animation: clockHand 5s infinite linear;
+  transform-box: fill-box;
+  transform-origin: bottom;
+}
+
+#leftTree,
+#righTree {
+  animation: tree 2s ease-in-out infinite alternate;
+  transform-box: fill-box;
+  transform-origin: bottom;
+}
+
+#man {
+  animation: manBody 1s ease-in-out infinite alternate;
+  transform-box: fill-box;
+  transform-origin: bottom;
+}
+
+#pc-circle {
+  fill: #6ace66;
+  stroke-width: 4;
+  animation: change-light 4s linear infinite alternate;
+}
+
+.blogFooter {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .container {
+    p{
+        margin-bottom: 0;
+    }
+    .designer {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .icons{
+        display: flex;
+        align-items: center;
+    
+    }
+  }
+}
+
+@keyframes clockHand {
+  from {
+    transform: rotateZ(0deg);
+  }
+  to {
+    transform: rotateZ(360deg);
+  }
+}
+
+@keyframes manBody {
+  from {
+    transform: rotateX(0deg);
+  }
+  to {
+    transform: rotateX(10deg);
+  }
+}
+
+@keyframes tree {
+  from {
+    transform: rotateZ(10deg);
+  }
+  to {
+    transform: rotateZ(-20deg);
+  }
+}
+
+@keyframes change-light {
+  0% {
+    stroke: #cd61f8;
+  }
+  25% {
+    stroke: #6ace66;
+  }
+  75% {
+    stroke: #2995c0;
+  }
+  100% {
+    stroke: #e92949;
+  }
+}
+
+/* Media Queries */
+
+@media screen  and (max-width: 500px){
+    .wrapper{
+        .link{
+            display: none;
+        }
+    }
+    
+}
+
+@media (min-width: 640px) {
+  .main-title {
+    h1 {
+      font-size: 2rem;
+      text-transform: uppercase;
+      font-weight: 700;
+      color: #555;
+    }
+
+    h2 {
+      font-size: 1.5rem;
+      font-weight: 300;
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .main-title {
+    h1 {
+      font-size: 3rem;
+      text-transform: uppercase;
+      font-weight: 800;
+      color: #555;
+    }
+
+    h2 {
+      font-size: 2rem;
+      font-weight: 300;
+    }
+  }
+}
+
+@media (min-width: 1024px) {
+  .main-title {
+    h1 {
+      font-size: 3rem;
+      text-transform: uppercase;
+      font-weight: 900;
+      color: #555;
+    }
+
+    h2 {
+      font-size: 2rem;
+      font-weight: 300;
+    }
+  }
+}
+
+@media (min-width: 1200px) {
+  .main-title {
+    h1 {
+      font-size: 4rem;
+      text-transform: uppercase;
+      font-weight: 900;
+      color: #555;
+    }
+
+    h2 {
+      font-size: 3rem;
+      font-weight: 300;
+    }
+
+    margin-bottom: 4rem;
+  }
+}
